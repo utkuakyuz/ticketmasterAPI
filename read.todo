@@ -1,0 +1,13 @@
+TODO LIST 
+✔ Create a table with necessary props @done(22-03-15 15:34)
+✔ Create a detail page @done(23-03-15 13:35)
+✔ Create the basepoint and fetch the data @done(23-03-15 13:35)
+
+☐ Pagination Component @critical
+ ☐ Send parameters to content to fetch data properly 
+ ☐  size*page < 1000, use this to find max num of pages 
+
+☐ Add styling to detail page @high
+☐ Add styling to table  @high
+
+☐ Sorting @low 
