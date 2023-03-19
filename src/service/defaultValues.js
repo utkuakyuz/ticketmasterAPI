@@ -3,7 +3,7 @@ export default Object.freeze({
   GetEventsValue: {
     url: "EventsJsonUrl",
     method: "GET",
-    params: {  page: 3, size: 20, keyword: "" , apikey: apikey,},
+    params: {  page: 0, size: 0, keyword: "" , sort: "", apikey: apikey,},
     header: {
       addToken: 0,
       multipart: 1,

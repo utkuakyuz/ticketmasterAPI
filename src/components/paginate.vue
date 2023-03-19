@@ -12,7 +12,7 @@
    <li v-if="paginateObj.page > 1" class="page-item">
     <a class="page-link" @click="changePage(0)" href="#">1</a>
    </li>
-   <li v-if="paginateObj.page > 1" class="page-item">
+   <li v-if="paginateObj.page > 2" class="page-item">
     <a class="page-link" href="#">...</a>
    </li>
    <li v-if="paginateObj.page != 0" class="page-item">
@@ -65,6 +65,27 @@
     </li>
    </ul>
   </div>
+  <div class="dropdown ms-3">
+   <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton1"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+   >
+    Go to page
+   </button>
+   <ul class="dropdown-menu f-height" aria-labelledby="dropdownMenuButton1">
+    <li v-for="page in NumberOfPages" :key="page">
+     <a
+      @click="(paginateObj.page = page-1), getEvents(paginateObj)"
+      class="dropdown-item"
+      href="#"
+      >{{ page }}</a
+     >
+    </li>
+   </ul>
+  </div>
  </nav>
 </template>
 <script setup>
@@ -96,5 +117,9 @@ function previousPage() {
 <style>
 .dropdown-menu {
  min-width: 4rem !important;
+}
+.f-height{
+     height: 30vh;
+    overflow-y: scroll;
 }
 </style>
