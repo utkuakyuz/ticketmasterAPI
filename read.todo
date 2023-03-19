@@ -2,12 +2,25 @@ TODO LIST
 ✔ Create a table with necessary props @done(22-03-15 15:34)
 ✔ Create a detail page @done(23-03-15 13:35)
 ✔ Create the basepoint and fetch the data @done(23-03-15 13:35)
+✔ Table Header control @done(23-03-19 14:11)
+ ✔  size*page < 1000, use this to find max num of pages @done(23-03-19 14:10)
+
+
+☐ Detail Page @critical
+
+☐ Table Sorf Feature
+ ☐ Send Query Params of Sort
+ ☐ Decide Sorting Feature
+ ☐ Change Header Object, add Keys
+ ☐ Test Query Params
+
 
 ☐ Pagination Component @critical
- ☐ Send parameters to content to fetch data properly 
- ☐  size*page < 1000, use this to find max num of pages 
+ ✔ Send parameters to content to fetch data properly @done(23-03-19 14:12)
+ 'name,asc', 'name,desc', 'date,asc', 'date,desc', 'relevance,asc', 'relevance,desc', 'distance,asc', 'name,date,asc', 'name,date,desc', 'date,name,asc', 'date,name,desc', 'distance,date,asc', 'onSaleStartDate,asc', 'id,asc', 'venueName,asc', 'venueName,desc', 'random'
+ ☐ Test @low
+ ☐ Styling
+
 
 ☐ Add styling to detail page @high
 ☐ Add styling to table  @high
-
-☐ Sorting @low 
