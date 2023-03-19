@@ -8,7 +8,7 @@
     <input
      class="form-control mr-sm-2 me-3"
      type="search"
-     v-model="form.val"
+     v-model="paginateObj.keyword"
      placeholder="Search With Some Keywords"
      aria-label="Search"
     />
@@ -17,18 +17,19 @@
     </button>
    </form>
 
-   <Table :rows="EventsData.list._embedded?.events"></Table>
+   <Table :rows="EventsData"></Table>
+   <Paginate></Paginate>
   </div>
  </div>
 </template>
 
 <script setup>
 import Table from "../components/table.vue";
-import { getEvents, EventsData } from "../store/content";
-import { reactive } from "vue";
-let form = reactive({ val: "" });
+import Paginate from "../components/paginate.vue";
+import { getEvents, EventsData, paginateObj } from "../store/content";
+
 const sendData = () => {
- getEvents(form);
+ getEvents();
 };
-getEvents(form);
+getEvents()
 </script>
