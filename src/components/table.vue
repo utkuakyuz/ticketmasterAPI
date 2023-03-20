@@ -34,14 +34,25 @@
 
 <script setup>
 import { toShortSentence } from '../lib/local';
-import { headers, sortKey, getEvents } from '../store/content';
+import { headers, EventsData, sortKey, getEvents } from '../store/content';
 import Loader from './loader.vue';
 function sortFunction(header) {
-  console.log('header :', header);
   if (sortKey.value.includes('asc')) {
-    sortKey.value = sortKey.value.replace('asc', 'desc');
+    if (header == 'ID'){
+      return
+    }
+    if (header.split(' ').length != 1) {
+      sortKey.value = header.split(' ')[1].toLowerCase() + ',desc'
+    }
+    else if (header == 'Venue'){
+      sortKey.value = header.toLowerCase() + 'Name,desc';
+    }
+    else{
+      sortKey.value = header.toLowerCase() + ',desc';
+    }
     getEvents();
     return;
+
   }
   if (header == 'Type' || header == 'Status' || header == 'Zone' || header == 'Info' || header == 'Detail') {
     return;
