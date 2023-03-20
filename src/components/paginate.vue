@@ -1,7 +1,7 @@
 <template>
  Size: {{ paginateObj.size }}, Page: {{ paginateObj.page + 1 }}
  Total Number of Pages: {{ NumberOfPages }}
- <nav class="d-flex">
+ <nav class="d-flex flex-wrap">
   <ul class="pagination">
    <li class="page-item">
     <a @click="previousPage" class="page-link" href="#" aria-label="Previous">

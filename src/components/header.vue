@@ -3,7 +3,7 @@
     <nav class="navbar p-5 navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
        <router-link class="navbar-brand" :to="'/'">TicketMaster</router-link>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button @click="toggle = !toggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -25,7 +25,7 @@
   </header>
 </template>
 <script setup>
-import { getEvents, paginateObj } from "../store/content";
+import { getEvents, paginateObj, toggle } from "../store/content";
 import router from '../router';
 const sendData = () => {
  router.push('/')

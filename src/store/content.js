@@ -1,5 +1,6 @@
 import { services } from '../service/restServices';
 import { reactive, ref } from 'vue';
+const toggle = ref(false);
 const EventsData = reactive({ loader: false, list: [] });
 const SingleEventData = reactive({ loader: false, list: [] });
 const headers = reactive({ list: ['ID', 'Name', 'Type', 'Sales Date', 'Start Date', 'Venue', 'Status', 'Zone', 'Info', 'Detail'] });
@@ -48,4 +49,4 @@ const getSingleEvent = (idValue) => {
     });
 };
 
-export { getEvents, EventsData, getSingleEvent, headers, SingleEventData, size, page, paginateObj, NumberOfPages, sortKey };
+export { getEvents, EventsData, getSingleEvent, headers, SingleEventData, size, page, paginateObj, NumberOfPages, sortKey, toggle };
