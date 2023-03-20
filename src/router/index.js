@@ -8,5 +8,5 @@ const router = createRouter({
     routes: [{ path: '/', component: Index},{ path: '/:id', component: Detail }],
   })
 
-console.log('routes:', routes)
+// console.log('routes:', routes)
 export default router

@@ -22,7 +22,7 @@ const getEvents = () => {
   services
     .GetEventsValue({ keyword: paginateObj.keyword, page: paginateObj.page, sort: sortKey.value, size: paginateObj.size })
     .then((res) => {
-      console.log('res from EventsData: ', res);
+      // console.log('res from EventsData: ', res);
       EventsData.loader = false;
       EventsData.list = res.data;
       if (res.data.page.totalPages < 1000) {
@@ -40,7 +40,7 @@ const getSingleEvent = (idValue) => {
   services
     .GetSingleEvent({ id: idValue })
     .then((res) => {
-      console.log('res from SingleEventData: ', res);
+      // console.log('res from SingleEventData: ', res);
       SingleEventData.list = res.data;
       SingleEventData.loader = false;
     })

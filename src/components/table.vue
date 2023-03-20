@@ -36,6 +36,9 @@
 import { toShortSentence } from '../lib/local';
 import { headers, EventsData, sortKey, getEvents } from '../store/content';
 import Loader from './loader.vue';
+const props = defineProps({
+  rows: Object,
+});
 function sortFunction(header) {
   if (header == 'Type' || header == 'Status' || header == 'Zone' || header == 'Info' || header == 'Detail') {
     return;
@@ -55,9 +58,8 @@ function sortFunction(header) {
     }
     getEvents();
     return;
-
   }
-   if (header == 'Venue') {
+  if (header == 'Venue') {
     sortKey.value = header.toLowerCase() + 'Name,asc';
   } else if (header.split(' ').length != 1) {
     sortKey.value = header.split(' ')[1].toLowerCase() + ',asc';
@@ -66,9 +68,6 @@ function sortFunction(header) {
   }
   getEvents();
 }
-const props = defineProps({
-  rows: Object,
-});
 </script>
 
 <style scoped>
