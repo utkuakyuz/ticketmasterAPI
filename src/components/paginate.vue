@@ -1,7 +1,6 @@
 <template>
- {{ paginateObj.size }} lu satırlar halinde {{ paginateObj.page + 1 }}. sayfa
- toplam {{ NumberOfPages }} sayfa
- <!-- {{  paginateObj }} -->
+ Size: {{ paginateObj.size }}, Page: {{ paginateObj.page + 1 }}
+ Total Number of Pages: {{ NumberOfPages }}
  <nav class="d-flex">
   <ul class="pagination">
    <li class="page-item">
@@ -30,7 +29,7 @@
      paginateObj.page + 2
     }}</a>
    </li>
-   <li v-if="paginateObj.page < NumberOfPages - 4" class="page-item">
+   <li v-if="paginateObj.page < NumberOfPages - 3" class="page-item">
     <a class="page-link" href="#">...</a>
    </li>
    <li v-if="paginateObj.page < NumberOfPages - 2" class="page-item">

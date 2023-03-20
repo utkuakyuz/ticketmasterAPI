@@ -6,9 +6,3 @@ export const toShortSentence = (str, kac, nokta) => {
  }
  return str;
 };
-const pad = (number) => (number < 10 ? "0" + number : number);
-export const formatDate = (date, nor = 1, full = false, day = false) => {
- const tar = new Date(date);
- let net = pad(tar.getDate());
- return net;
-};

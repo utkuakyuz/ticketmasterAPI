@@ -28,18 +28,13 @@
         </tr>
       </tbody>
     </table>
-    <!-- <div v-if="rows.loader" class="d-flex justify-content-center loader-container">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </div> -->
     <Loader v-if="rows.loader"></Loader>
   </div>
 </template>
 
 <script setup>
-import { toShortSentence, formatDate } from '../lib/local';
-import { headers, EventsData, sortKey, getEvents } from '../store/content';
+import { toShortSentence } from '../lib/local';
+import { headers, sortKey, getEvents } from '../store/content';
 import Loader from './loader.vue';
 function sortFunction(header) {
   console.log('header :', header);
