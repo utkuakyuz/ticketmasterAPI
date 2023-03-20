@@ -45,7 +45,7 @@
   </ul>
   <div class="dropdown ms-3">
    <button
-    class="btn btn-secondary dropdown-toggle"
+    class="btn btn-light dropdown-toggle"
     type="button"
     data-bs-toggle="dropdown"
     aria-expanded="false"
@@ -68,7 +68,7 @@
   </div>
   <div class="dropdown ms-3">
    <button
-    class="btn btn-secondary dropdown-toggle"
+    class="btn btn-light dropdown-toggle"
     type="button"
     data-bs-toggle="dropdown"
     aria-expanded="false"
