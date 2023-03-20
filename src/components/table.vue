@@ -37,6 +37,9 @@ import { toShortSentence } from '../lib/local';
 import { headers, EventsData, sortKey, getEvents } from '../store/content';
 import Loader from './loader.vue';
 function sortFunction(header) {
+  if (header == 'Type' || header == 'Status' || header == 'Zone' || header == 'Info' || header == 'Detail') {
+    return;
+  }
   if (sortKey.value.includes('asc')) {
     if (header == 'ID'){
       return
@@ -54,9 +57,7 @@ function sortFunction(header) {
     return;
 
   }
-  if (header == 'Type' || header == 'Status' || header == 'Zone' || header == 'Info' || header == 'Detail') {
-    return;
-  } else if (header == 'Venue') {
+   if (header == 'Venue') {
     sortKey.value = header.toLowerCase() + 'Name,asc';
   } else if (header.split(' ').length != 1) {
     sortKey.value = header.split(' ')[1].toLowerCase() + ',asc';
