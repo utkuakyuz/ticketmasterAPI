@@ -1,6 +1,6 @@
 <template>
- {{ paginateObj.size }} lu satırlar halinde {{ paginateObj.page + 1 }}. sayfa toplam
- {{ NumberOfPages }} sayfa
+ {{ paginateObj.size }} lu satırlar halinde {{ paginateObj.page + 1 }}. sayfa
+ toplam {{ NumberOfPages }} sayfa
  <!-- {{  paginateObj }} -->
  <nav class="d-flex">
   <ul class="pagination">
@@ -48,16 +48,18 @@
    <button
     class="btn btn-secondary dropdown-toggle"
     type="button"
-    id="dropdownMenuButton1"
     data-bs-toggle="dropdown"
     aria-expanded="false"
    >
     Size
    </button>
-   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+   <ul class="dropdown-menu">
     <li v-for="option in sizeOptions" :key="option">
      <a
-      @click="(paginateObj.size = option), getEvents(paginateObj)"
+      @click="
+       ((paginateObj.size = option), (paginateObj.page = 0)),
+        getEvents(paginateObj)
+      "
       class="dropdown-item"
       href="#"
       >{{ option }}</a
@@ -69,16 +71,15 @@
    <button
     class="btn btn-secondary dropdown-toggle"
     type="button"
-    id="dropdownMenuButton1"
     data-bs-toggle="dropdown"
     aria-expanded="false"
    >
     Go to page
    </button>
-   <ul class="dropdown-menu f-height" aria-labelledby="dropdownMenuButton1">
+   <ul class="dropdown-menu f-height">
     <li v-for="page in NumberOfPages" :key="page">
      <a
-      @click="(paginateObj.page = page-1), getEvents(paginateObj)"
+      @click="(paginateObj.page = page - 1), getEvents(paginateObj)"
       class="dropdown-item"
       href="#"
       >{{ page }}</a
@@ -90,13 +91,10 @@
 </template>
 <script setup>
 import { ref } from "vue";
-import {
- paginateObj,
- getEvents,
- NumberOfPages,
-} from "../store/content";
+import { paginateObj, getEvents, NumberOfPages } from "../store/content";
 
 let sizeOptions = ref([5, 10, 15, 20]);
+
 function changePage(newPageNum) {
  paginateObj.page = newPageNum;
  getEvents(paginateObj);
@@ -118,8 +116,8 @@ function previousPage() {
 .dropdown-menu {
  min-width: 4rem !important;
 }
-.f-height{
-     height: 30vh;
-    overflow-y: scroll;
+.f-height {
+ height: 30vh;
+ overflow-y: scroll;
 }
 </style>

@@ -28,17 +28,19 @@
         </tr>
       </tbody>
     </table>
-    <div v-if="rows.loader" class="d-flex justify-content-center loader-container">
+    <!-- <div v-if="rows.loader" class="d-flex justify-content-center loader-container">
       <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
-    </div>
+    </div> -->
+    <Loader v-if="rows.loader"></Loader>
   </div>
 </template>
 
 <script setup>
 import { toShortSentence, formatDate } from '../lib/local';
 import { headers, EventsData, sortKey, getEvents } from '../store/content';
+import Loader from './loader.vue';
 function sortFunction(header) {
   console.log('header :', header);
   if (sortKey.value.includes('asc')) {
@@ -65,13 +67,5 @@ const props = defineProps({
 <style scoped>
 .blur{
   filter: blur(3px)
-}
-.loader-container{
-  position: absolute;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-top: 50%;
 }
 </style>

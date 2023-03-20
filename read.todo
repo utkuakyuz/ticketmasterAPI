@@ -18,11 +18,13 @@ TODO LIST
 ✔ Add styling to detail page @high @done (19.03.2023 23:52:25)
 ✔ Add styling to table  @high @done (19.03.2023 23:52:27)
 ✔ Detail Sayfasına Loader Eklenmesi @done (20.03.2023 01:25:39)
-
+✔ Navbar linklerinin doldurulması @low @done(23-03-20 12:36)
+✔ Header komponentleştirilmesi @today @done(23-03-20 12:36)
+✔ Loader elementinin komponentleştirilmesi @today @done(23-03-20 12:50)
+✔ Detail Sayfasında arama yapıldığında ana sayfaya yönlendirilmesi @today @done(23-03-20 12:50)
 
 ☐ Detail Page Çeşitli Sayfalarda Kontrolü @high 
 ☐ Detail Page en yüksek çözünürlüklü görselin gösterilmesi çalışması, görsel boyutu optimizasyonu @low 
-☐ Navbar linklerinin doldurulması @low 
-☐ Header komponentleştirilmesi @today
-☐ Detail Sayfasında arama yapıldığında ana sayfaya yönlendirilmesi @today
-☐ Loader elementinin komponentleştirilmesi @today
+☐ Test aşamaları eklenmesi
+☐ 
+

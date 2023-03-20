@@ -1,8 +1,8 @@
 <template>
   <div v-if="!SingleEventData.loader">
-    <div class="container-fluid d-flex align-items-center justify-content-between flex-xl-wrap bg-light p-2">
-      <img class="image-fluid min-vw-25" style="max-width: 50%" v-if="'images' in SingleEventData.list" :src="SingleEventData.list?.images[4]?.url" alt="" />
-      <div class="d-flex flex-wrap">
+    <div class="container-fluid d-flex align-items-center flex-xl-wrap bg-light p-2">
+      <img class="image-fluid" style="max-width: 50%;min-width: 25%;" v-if="'images' in SingleEventData.list" :src="SingleEventData.list?.images[4]?.url" alt="" />
+      <div class="d-flex flex-wrap ps-5">
         <div class="p-3">
           <h2 class="fw-bolder">{{ SingleEventData.list.name }}</h2>
           <h3 class="text-muted fst-italic">{{ SingleEventData.list.id }}</h3>
@@ -34,17 +34,13 @@
       <h6 v-if="SingleEventData.list.accessibility === null">accessibility Notes: {{ SingleEventData.list.accessibility }}</h6>
     </div>
   </div>
-  <div v-else>
-    <div v-if="SingleEventData.loader" class="d-flex justify-content-center loader-container">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </div>
-  </div>
+  <Loader v-else></Loader>
+
 </template>
 <script setup>
 import { useRoute } from 'vue-router';
 import { getSingleEvent, SingleEventData } from '../store/content';
+import Loader from '../components/loader.vue';
 const route = useRoute();
 getSingleEvent(route.params.id);
 </script>

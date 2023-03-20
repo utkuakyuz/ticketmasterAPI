@@ -3,7 +3,6 @@ import { reactive, ref } from 'vue';
 const EventsData = reactive({ loader: false, list: [] });
 const SingleEventData = reactive({ loader: false, list: [] });
 const headers = reactive({ list: ['ID', 'Name', 'Type', 'Sales Date', 'Start Date', 'Venue', 'Status', 'Zone', 'Info', 'Detail'] });
-const headers2 = reactive({ list: ['ID', 'Name', 'Type', 'Sales Date', 'Start Date', 'Venue', 'Status', 'Zone', 'Info', 'Detail'] });
 const keyword = ref('');
 const size = ref(5);
 const page = ref(0);
