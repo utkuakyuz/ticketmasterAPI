@@ -1,4 +1,4 @@
-# Building a Basic Table Component with Search, Pagination, and Sort Features
+# Table Component with Search, Pagination, and Sort Features
 This project demonstrates how to build a basic table component with search, pagination, and sort features using VUE3 Composition API. The component is built from scratch without using any existing library component. The table component receives events from the Ticketmaster API with search keywords such as cinema, football, etc., and displays the API results on the table. The component also has pagination and search capabilities.
 ![image](https://user-images.githubusercontent.com/79662515/235302605-147f7b2c-0c08-48d8-979b-b8e4a31b23a9.png)
 ![image](https://user-images.githubusercontent.com/79662515/235302646-a1e1bcfe-4292-4370-8586-939e4f514b4e.png)
